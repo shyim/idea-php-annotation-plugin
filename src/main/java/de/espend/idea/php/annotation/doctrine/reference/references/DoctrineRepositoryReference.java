@@ -48,7 +48,7 @@ public class DoctrineRepositoryReference extends PsiPolyVariantReferenceBase<Psi
 
         List<LookupElement> lookupElements = PhpIndex.getInstance(getElement().getProject())
             .getAllSubclasses("\\Doctrine\\Common\\Persistence\\ObjectRepository").stream()
-            .map(phpClass -> LookupElementBuilder.create(phpClass.getPresentableFQN()).withIcon(PhpIcons.CLASS_ICON))
+            .map(phpClass -> LookupElementBuilder.create(phpClass.getPresentableFQN()).withIcon(PhpIcons.CLASS))
             .collect(Collectors.toList());
 
         return lookupElements.toArray();

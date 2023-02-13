@@ -30,7 +30,7 @@ public class PhpAnnotationPropertyLookupElement extends LookupElement {
         presentation.setItemText(getLookupString());
         presentation.setTypeText(ucfirst(this.annotationProperty.getAnnotationPropertyEnum().toString()));
         presentation.setTypeGrayed(true);
-        presentation.setIcon(PhpIcons.FIELD_ICON);
+        presentation.setIcon(PhpIcons.FIELD);
     }
 
     public void handleInsert(InsertionContext context) {

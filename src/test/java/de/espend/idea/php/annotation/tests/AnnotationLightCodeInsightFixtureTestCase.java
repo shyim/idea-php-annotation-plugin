@@ -14,7 +14,6 @@ import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementPresentation;
 import com.intellij.codeInsight.navigation.actions.GotoDeclarationHandler;
 import com.intellij.codeInspection.*;
-import com.intellij.codeInspection.defaultFileTemplateUsage.DefaultFileTemplateUsageInspection;
 import com.intellij.navigation.GotoRelatedItem;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.editor.Editor;
@@ -495,11 +494,6 @@ public abstract class AnnotationLightCodeInsightFixtureTestCase extends LightJav
         for (LocalInspectionEP localInspectionEP : LocalInspectionEP.LOCAL_INSPECTION.getExtensions()) {
             Object object = localInspectionEP.getInstance();
             if(!(object instanceof LocalInspectionTool)) {
-                continue;
-            }
-
-            // fix for: "Default template not found: File Header"
-            if(object instanceof DefaultFileTemplateUsageInspection) {
                 continue;
             }
 
